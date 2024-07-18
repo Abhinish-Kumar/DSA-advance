@@ -42,6 +42,7 @@ Below is a diagram illustrating the memory allocation for the array `arr`:
 
 Here's a visual representation of the memory allocation:
 
+```markdown
 Base Address: 1000
 -------------------------------------
 | Address | Index | Element         |
@@ -52,6 +53,8 @@ Base Address: 1000
 |  1012   |   3   |  arr[3]         |
 |  1016   |   4   |  arr[4]         |
 -------------------------------------
+
+```
 
 - 1. Base Address :- The base address is the memory location of the first element of the array. In this example, the base address is 1000.
 
