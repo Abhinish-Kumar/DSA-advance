@@ -132,6 +132,7 @@ address(arr[4]) = 1000 + 4 * 4 = 1016
 
 Here is a diagram illustrating the memory allocation for the array `arr`:
 
+```markdown
 Base Address: 1000
 -------------------------------------
 | Address | Index | Element         |
@@ -142,7 +143,7 @@ Base Address: 1000
 |  1012   |   3   |  arr[3]         |
 |  1016   |   4   |  arr[4]         |
 -------------------------------------
-
+```
 
 Detailed Breakdown
 
