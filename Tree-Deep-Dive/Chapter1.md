@@ -92,6 +92,18 @@ Different tree data structures allow quicker and easier access to the data as it
 
 
 
+## Other resources to learn
+
+| Week | Topic                                      | Description                                                                                        | Resources/References                                         |
+|------|--------------------------------------------|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| 1    | Introduction to Trees                      | Understand the basics of trees, including terminology and the importance of trees in data structures. | [GeeksforGeeks: Tree Data Structure](https://www.geeksforgeeks.org/binary-tree-data-structure/) |
+| 2    | Binary Tree Basics                         | Learn the specific characteristics of binary trees, including node structure and tree properties.   | [Programiz: Binary Tree](https://www.programiz.com/dsa/binary-tree) |
+| 3    | Binary Tree Traversal                      | Explore different traversal methods like Inorder, Preorder, and Postorder.                         | [GeeksforGeeks: Tree Traversal](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/) |
+| 4    | Binary Search Tree (BST)                   | Understand BST properties and how they differ from binary trees.                                    | [GeeksforGeeks: Binary Search Tree](https://www.geeksforgeeks.org/binary-search-tree-data-structure/) |
+| 5    | Tree Insertion and Deletion                | Learn how to insert and delete nodes in both binary trees and binary search trees.                  | [Programiz: BST Insertion and Deletion](https://www.programiz.com/dsa/binary-search-tree) |
+| 6    | Balanced Trees (AVL and Red-Black Trees)   | Study advanced binary trees like AVL and Red-Black Trees, focusing on balancing techniques.         | [GeeksforGeeks: Balanced Trees](https://www.geeksforgeeks.org/balanced-binary-tree/) |
+| 7    | Binary Tree Applications                   | Learn about the applications of binary trees in various algorithms and real-world problems.         | [Topcoder: Binary Tree Applications](https://www.topcoder.com/thrive/articles/binary-trees-data-structures) |
+| 8    | Advanced Problems and Optimization         | Solve complex binary tree problems and learn optimization techniques for large datasets.            | [LeetCode: Binary Tree Problems](https://leetcode.com/tag/binary-tree/) |
 
 
 
