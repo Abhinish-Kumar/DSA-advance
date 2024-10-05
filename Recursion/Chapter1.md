@@ -64,8 +64,25 @@ console.log(fibonaci(6))//8
 ```
 
 
+### 3. N Fibonaci series print 
 
+```javascript
+//add pre and preprev
+//0 1 1 2 3 5 8 13
 
+function fibonaci(n){
+//base case
+if(n===0||n===1){
+return n
+}
+return fibonaci(n-1)+fibonaci(n-2);
+}
+
+let n=8;
+for (let i = 0; i < n; i++) {
+console.log(fibonaci(i))  // 0 1 1 2 3 5 8 13
+}
+```
 
 
 
