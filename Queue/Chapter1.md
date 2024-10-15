@@ -125,17 +125,76 @@ Tail:- first we incresease the pointer to point to an empty memory location then
 
 
 
+### Initial State
+```
+Queue: [ ]
+Head: 0
+Tail: -1
+```
 
+### After `enQueue(44)`
+```
+Queue: [44]
+Head: 0
+Tail: 0
+```
 
+### After `enQueue(54)`
+```
+Queue: [44, 54]
+Head: 0
+Tail: 1
+```
 
+### After `enQueue(65)`
+```
+Queue: [44, 54, 65]
+Head: 0
+Tail: 2
+```
 
+### After `enQueue(99)` (Queue is full)
+```
+Queue: [44, 54, 65]
+Head: 0
+Tail: 2
+Output: "Queue is full"
+```
 
+### After `deQueue()`
+```
+Queue: [null, 54, 65]
+Head: 1
+Tail: 2
+```
 
+### After `deQueue()`
+```
+Queue: [null, null, 65]
+Head: 2
+Tail: 2
+```
 
+### After `deQueue()`
+```
+Queue: [null, null, null]
+Head: 3
+Tail: 2
+```
 
+### After `deQueue()` (No element to remove)
+```
+Queue: [null, null, null]
+Head: 3
+Tail: 2
+Output: "No element to remove"
+```
 
+### After `deQueue()` (No element to remove)
+```
+Queue: [null, null, null]
+Head: 3
+Tail: 2
+Output: "No element to remove"
+```
 
-
-
-
- 
