@@ -23,6 +23,7 @@ DeQueue :- Elements ready to be served.
 
 Note :- it is not a physical data structure its a logical data structure or a concept that give us functionality like a real queue with best possible features , that we can use to solve real world problems easily. 
 
+types of queue = https://www.javatpoint.com/ds-types-of-queues
 ## 	How	are	Queues	Used?
 
 ## Queue	ADT
