@@ -68,133 +68,62 @@ Similar	to	other	ADTs,	executing	DeQueue	on	an	empty	queue	throws	an **“Empty	
 First lets see the problem with simple array by implementing a queue.
 
 
-```javascript 
-class Queue{
-  constructor(size=5){
-    this.q=[];
-    this.head=0;
-    //insert from tail
-    this.tail=-1;
-    this.size=size;
+```javascript
+class Queue {
+  constructor(size = 3) {
+    this.f = -1;
+    this.r = -1;
+    this.size = size;
+    this.queue = [];
   }
-  //to Insert
-  enQueue(e){
-    if(this.tail+2<=this.size){
-    this.tail++;
-    this.q[this.tail]=e;
-    return this.q;
-    }else{
-      return "Queue is full"
+
+  add(e) {
+    if (this.r == this.size - 1) {
+      return "Queue is full";
     }
-    
+    if (this.f == -1) {
+      this.f = 0;
+      this.r = 0;
+      this.queue[this.r] = e;
+    } else {
+      this.r++;
+      this.queue[this.r] = e;
+    }
+    return this.queue;
   }
-  deQueue(){
-    if(this.head<=this.tail){
-      this.q[this.head]=null;
-     this.head++;
-      return this.q;
-    }else{
-      return "No element to remove"
+
+  remove() {
+    if (this.r - this.f <= 0) {
+      return "No element to remove";
     }
-    
+    let x = this.queue[this.f];
+    this.f++;
+    return x;
+  }
+
+  peek() {
+    if (this.r - this.f <= 0) {
+      return "No element to remove";
+    }
+    return this.queue[this.f];
   }
 }
 
+let x = new Queue(4);
+console.log(x.add(100));
+console.log(x.add(200));
+console.log(x.peek());
+console.log(x.add(300));
+console.log(x.add(400));
+console.log(x.add(500));
+console.log(x.remove());
+console.log(x.remove());
+console.log(x.remove());
+console.log(x.remove());
+console.log(x.add(400));
 
-let xq=new Queue(3);
+```
+Problem with array implementation is that we can only use the space only once.
+Solution :- Circular queue.
 
-
-console.log(xq.enQueue(44))
-console.log(xq.enQueue(54))
-console.log(xq.enQueue(65))
-console.log(xq.enQueue(99))
-console.log(xq.enQueue(44))
-console.log(xq.enQueue(54))
-console.log(xq.enQueue(65))
-console.log(xq.enQueue(99))
-console.log(xq.deQueue())
-console.log(xq.deQueue())
-console.log(xq.deQueue())
-console.log(xq.deQueue())
-console.log(xq.deQueue())
-```
-
-
-Head:- first we delete the element of head then we update the pointer.
-Tail:- first we incresease the pointer to point to an empty memory location then we place item there.
-
-
-
-### Initial State
-```
-Queue: [ ]
-Head: 0
-Tail: -1
-```
-
-### After `enQueue(44)`
-```
-Queue: [44]
-Head: 0
-Tail: 0
-```
-
-### After `enQueue(54)`
-```
-Queue: [44, 54]
-Head: 0
-Tail: 1
-```
-
-### After `enQueue(65)`
-```
-Queue: [44, 54, 65]
-Head: 0
-Tail: 2
-```
-
-### After `enQueue(99)` (Queue is full)
-```
-Queue: [44, 54, 65]
-Head: 0
-Tail: 2
-Output: "Queue is full"
-```
-
-### After `deQueue()`
-```
-Queue: [null, 54, 65]
-Head: 1
-Tail: 2
-```
-
-### After `deQueue()`
-```
-Queue: [null, null, 65]
-Head: 2
-Tail: 2
-```
-
-### After `deQueue()`
-```
-Queue: [null, null, null]
-Head: 3
-Tail: 2
-```
-
-### After `deQueue()` (No element to remove)
-```
-Queue: [null, null, null]
-Head: 3
-Tail: 2
-Output: "No element to remove"
-```
-
-### After `deQueue()` (No element to remove)
-```
-Queue: [null, null, null]
-Head: 3
-Tail: 2
-Output: "No element to remove"
-```
 
