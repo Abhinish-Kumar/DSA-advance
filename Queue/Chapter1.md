@@ -69,10 +69,59 @@ First lets see the problem with simple array by implementing a queue.
 
 
 ```javascript 
+class Queue{
+  constructor(size=5){
+    this.q=[];
+    this.head=0;
+    //insert from tail
+    this.tail=-1;
+    this.size=size;
+  }
+  //to Insert
+  enQueue(e){
+    if(this.tail+2<=this.size){
+    this.tail++;
+    this.q[this.tail]=e;
+    return this.q;
+    }else{
+      return "Queue is full"
+    }
+    
+  }
+  deQueue(){
+    if(this.head<=this.tail){
+      this.q[this.head]=null;
+     this.head++;
+      return this.q;
+    }else{
+      return "No element to remove"
+    }
+    
+  }
+}
 
 
+let xq=new Queue(3);
+
+
+console.log(xq.enQueue(44))
+console.log(xq.enQueue(54))
+console.log(xq.enQueue(65))
+console.log(xq.enQueue(99))
+console.log(xq.enQueue(44))
+console.log(xq.enQueue(54))
+console.log(xq.enQueue(65))
+console.log(xq.enQueue(99))
+console.log(xq.deQueue())
+console.log(xq.deQueue())
+console.log(xq.deQueue())
+console.log(xq.deQueue())
+console.log(xq.deQueue())
 ```
 
+
+Head:- first we delete the element of head then we update the pointer.
+Tail:- first we incresease the pointer to point to an empty memory location then we place item there.
 
 
 
