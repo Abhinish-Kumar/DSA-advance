@@ -94,7 +94,7 @@ class Queue {
   }
 
   remove() {
-    if (this.r - this.f <= 0) {
+    if (this.r - this.f < 0) {
       return "No element to remove";
     }
     let x = this.queue[this.f];
@@ -108,20 +108,37 @@ class Queue {
     }
     return this.queue[this.f];
   }
+  isEmpty() {
+    if (this.r - this.f <= 0) {
+      return true;
+    }
+    return false;
+  }
+  sizze() {
+    if (this.f == -1 || this.f == this.r) {
+      return "Size is " + 0;
+    }
+    return "Size is " + Math.floor(this.r - this.f + 1);
+  }
 }
 
 let x = new Queue(4);
-console.log(x.add(100));
-console.log(x.add(200));
-console.log(x.peek());
-console.log(x.add(300));
-console.log(x.add(400));
-console.log(x.add(500));
-console.log(x.remove());
-console.log(x.remove());
-console.log(x.remove());
-console.log(x.remove());
-console.log(x.add(400));
+console.log(x.isEmpty()); //true
+console.log(x.add(100)); //[100]
+console.log(x.add(200)); //[100, 200]
+console.log(x.sizze()); //Size is 2
+console.log(x.isEmpty()); //false
+console.log(x.peek()); //100
+console.log(x.add(300)); //[100, 200, 300]
+console.log(x.add(400)); //[100, 200, 300, 400]
+console.log(x.add(500)); //Queue is full
+console.log(x.remove()); //100
+console.log(x.remove()); //200
+console.log(x.remove()); //300
+console.log(x.remove()); //400
+console.log(x.add(400)); //Queue is full
+console.log(x.isEmpty()); //true
+console.log(x.sizze()); //size is 0
 
 ```
 Problem with array implementation is that we can only use the space only once.
