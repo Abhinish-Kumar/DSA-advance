@@ -145,3 +145,138 @@ Problem with array implementation is that we can only use the space only once.
 Solution :- Circular queue.
 
 
+## Circular linked List implementation with array
+
+```javascript
+class Queue {
+        constructor(givenSize = 5) {
+          this.f = -1;
+          this.r = -1;
+          this.size = 0;
+          this.givenSize = givenSize;
+          this.queue = [];
+        }
+        add(e = null) {
+          if (this.size == 0) {
+            //reset two pointers
+            this.f = 0;
+            this.r = 0;
+            this.queue[this.r] = e;
+            this.r++;
+          } else if (this.size == this.givenSize) {
+            console.log("Queue is full");
+            return;
+          } else if (this.r < this.givenSize) {
+            this.queue[this.r] = e;
+            this.r++;
+          } else if (this.r == this.givenSize) {
+            //if it reaches to end
+            this.r = 0;
+            this.queue[this.r] = e;
+            this.r++;
+          }
+          this.size++;
+        }
+
+        remove() {
+          if (this.size == 0) {
+            console.log("Queue is empty");
+            return;
+          } else if (this.f == this.givenSize - 1) {
+            let val = this.queue[this.f]; //extra
+            this.queue[this.f] = null;
+            this.f = 0;
+            this.size--;
+            return val;
+          } else {
+            let val = this.queue[this.f];
+            this.queue[this.f] = null; //extra
+            this.f++;
+            this.size--;
+            return val;
+          }
+        }
+        peek() {
+          if (this.size == 0) return -1;
+          return this.queue[this.r - 1];
+        }
+        isEmpty() {
+          if (this.size == 0) return true;
+          return false;
+        }
+        display() {
+          if (this.f <= this.r - 1) {
+            console.log("start");
+            for (let i = this.f; i < this.r; i++) {
+              console.log("queue " + this.queue[i]);
+            }
+            console.log("end");
+          } else if (this.r - 1 <= this.f) {
+            console.log("start");
+            for (let i = this.f; i < this.queue.length; i++) {
+              console.log("queue " + this.queue[i]);
+            }
+            for (let i = 0; i < this.r; i++) {
+              console.log("queue " + this.queue[i]);
+            }
+            console.log("end");
+          }
+        }
+      }
+
+      let x = new Queue(4);
+//Queue { f: -1, r: -1, size: 0, givenSize: 4, queue: [] }
+ x.add(100);
+      x.add(200);
+      x.add(300);
+      x.add(400);
+      x.display()
+//start
+// queue 100
+// queue 200
+// queue 300
+// queue 400
+// end
+      console.log(x.isEmpty()) //false;
+      console.log(x.peek()); //400
+      console.log(x.queue); // [100, 200, 300, 400]
+      x.add(500); //q is full show message
+      //remove one from front
+      console.log(x.remove()); //100
+      console.log(x.queue); //[null, 200, 300, 400]
+      x.add(500);
+      console.log(x.queue); //[500, 200, 300, 400]
+      x.add(700); //q is full
+      console.log(x.remove()); //200
+      console.log(x.queue); // [500, null, 300, 400]
+      console.log(x.peek()); //500
+      x.add(700);
+      console.log(x.queue); //[500, 700, 300, 400]
+      x.display();
+      console.log(x.r);
+      console.log(x.f);
+      x.add(3000); //Q is full
+      console.log(x.peek()); //700
+
+      //remove all element
+      console.log(x.remove());
+      console.log(x.remove());
+      console.log(x.remove());
+      console.log(x.remove());
+      console.log(x.remove());
+      console.log(x.peek()); //-1
+      console.log(x.isEmpty()); //true
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
