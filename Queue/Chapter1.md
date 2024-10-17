@@ -268,6 +268,14 @@ class Queue {
       console.log(x.isEmpty()); //true
 ```
 
+| Method      | Time Complexity | Space Complexity | Description                                                                 |
+|-------------|-----------------|------------------|-----------------------------------------------------------------------------|
+| `add(e)`    | O(1)            | O(1)             | Adds an element to the rear of the queue.                                   |
+| `remove()`  | O(1)            | O(1)             | Removes an element from the front of the queue.                             |
+| `peek()`    | O(1)            | O(1)             | Returns the front element of the queue without removing it.                 |
+| `isEmpty()` | O(1)            | O(1)             | Checks if the queue is empty.                                               |
+| `sizze()`   | O(1)            | O(1)             | Returns the current size of the queue.                                      |
+| `display()` | O(n)            | O(1)             | Displays all elements in the queue from front to rear.                      |
 
 
 
