@@ -82,8 +82,57 @@ console.log(name.split("").reverse().join(""));
 ```
 
 
+## Check if a String is a Palindrome
 
+A palindrome is a string that reads the same forward and backward. Check if a given string is a palindrome.
 
+1. Without any method
+
+```javascript
+let name="madam";
+let f=0;
+let l=name.length-1;
+
+let flag=true;
+while(f<l){
+  if(name[f]!=name[l]){
+    flag=false;
+  }
+  f++;
+  l--;
+}
+console.log(flag)
+```
+
+with method
+
+```javascript
+
+function isPalindrom(str){
+  return str==str.split("").reverse().join("");
+}
+
+console.log(isPalindrom("madam"))//true
+console.log(isPalindrom("abhinish"))//false
+console.log(isPalindrom("caaacaaac"))//true
+
+```
+
+## 3 Longest Substring Without Repeating Characters
+
+## 4 Find the First Non-Repeating Character
+
+## 5 Anagram Check
+
+## 6  Longest Palindromic Substring
+
+## 7 String Compression
+
+## 8 Count and Say Problem
+
+## 9 Group Anagrams
+
+## 10 Find All Permutations of a String
 
 
 
