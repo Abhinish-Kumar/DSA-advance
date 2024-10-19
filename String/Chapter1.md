@@ -35,8 +35,51 @@ console.log(result); // Output: "My name is XAbhinish"
 
 ```
 
+```javascript
+
+//final ans with extra space
+let str="My name is abhinish";
+  let revst="";
+
+  let l=str.length;
+for(let i=l-1;i>=0;i--){
+
+revst+=str[i];
+
+}
+console.log(revst)
+```
+
+```javascript
+//without using extra space
+//reverse string without i=using built in method
+
+let name="abhinish Kumar";
+
+//you can not modify the string with index so convert it to Array
+
+let arr=name.split("");
+console.log(arr);
+
+let f=0;
+let l=arr.length-1;
+
+while(f<l){
+  [arr[f],arr[l]]=[arr[l],arr[f]];
+  f++;
+  l--;
+}
+
+name=arr.join("");
+console.log(name);
+```
 
 
+```javascript
+//with method
+let name="abhinish";
+console.log(name.split("").reverse().join(""));
+```
 
 
 
