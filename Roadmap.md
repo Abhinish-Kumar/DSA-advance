@@ -13,7 +13,7 @@
 10. Union of two sorted array
 
 
-```html
+```mathematica
 Tree
 ├── General Trees
 │   ├── N-ary Tree
