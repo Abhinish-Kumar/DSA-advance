@@ -59,6 +59,16 @@ deletee(bstroot,18);
 
 delete node with 2 child (little complex)
 
+if you found the element relace it with the 
+1. smallest element at right or
+2. larget element at left sub tree
+
+Only then the resultent BST will be a BST
+
+
+
+
+
 
 
 
