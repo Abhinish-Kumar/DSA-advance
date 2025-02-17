@@ -149,7 +149,46 @@ return newList.next;
 
 
 
+## 19. Remove Nth Node From End of List
 
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+    if(!head) return null;
+    let current=head;
+    let count=n;
+    let size=0;
+    while(current){
+        size++;
+        current=current.next;
+    }
+    if(size==count) return head.next;
+    current=head;
+    let prev=head.next;
+    while(size--){
+        if(size+1==count){
+            prev.next=current.next;
+        }else{
+prev=current;
+      
+        }
+          current=current.next;
+    }
+    return head;
+
+};
+```
 
 
 
