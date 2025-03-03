@@ -345,11 +345,130 @@ dirWeg.printGraph();
 ```
 
 
+# Adjacency List /Map
+
+```javascript
+class Graph{
+    constructor(numVer){
+       this.adjacencyList=new Map();
+    }
+    addVertex(vertex) {
+    if (!this.adjacencyList.has(vertex)) {
+        //if wortex is not present create it.
+      this.adjacencyList.set(vertex, []);
+    }
+  }
+  
+  // Add an edge between two vertices
+  addEdge(source, dest) {
+    //if source and dest both exist only then connect them
+    if (this.adjacencyList.has(source) &&this.adjacencyList.has(dest)) {
+        //get the array and push related nodes to it 
+        //means so many destination for one node
+      this.adjacencyList.get(source).push(dest);
+        this.adjacencyList.get(dest).push(source);
+    }
+   
+  }
+  
+  printGraph() {
+    for (let [vertex, neighbors] of this.adjacencyList) {
+      console.log(`${vertex} -> ${neighbors.join(', ')}`);
+    }
+  }
+}
+
+
+let g=new Graph(5);
+g.addVertex(3)
+g.addVertex(2)
+g.addEdge(3,2);
+console.log(g)
+g.printGraph();
+
+```
+
+```javascript
+Graph { adjacencyList: Map(2) { 3 => [ 2 ], 2 => [ 3 ] } }
+3 -> 2
+2 -> 3
+```
+
+
+## Weighted Graph 
+
+```javascript
+class Graph{
+    constructor(numVer){
+       this.adjacencyList=new Map();
+    }
+    addVertex(vertex) {
+    if (!this.adjacencyList.has(vertex)) {
+        //if wortex is not present create it.
+      this.adjacencyList.set(vertex, []);
+    }
+  }
+  
+  // Add an edge between two vertices
+  addEdge(source, dest) {
+    //if source and dest both exist only then connect them
+    if (this.adjacencyList.has(source) &&this.adjacencyList.has(dest)) {
+        //get the array and push related nodes to it 
+        //means so many destination for one node
+      this.adjacencyList.get(source).push(dest); 
+        this.adjacencyList.get(dest).push(source);
+    }
+   
+  }
+  
+   // Add a weighted edge between two vertices
+  addEdgeWeight(source, dest, weight) {
+    // Ensure both source and destination vertices exist in the graph
+    if (this.adjacencyList.has(source) && this.adjacencyList.has(dest)) {
+      // Add the edge from source to dest with the given weight
+      this.adjacencyList.get(source).push({ vertex: dest, weight });
+      
+      // Add the edge from dest to source (for undirected graph) with the given weight
+      this.adjacencyList.get(dest).push({ vertex: source, weight });
+    }
+  }
+  
+  printGraph() {
+    for (let [vertex, neighbors] of this.adjacencyList) {
+      console.log(`${vertex} -> ${neighbors.join(', ')}`);
+    }
+  }
+}
+
+
+let g=new Graph(5);
+g.addVertex(3)
+g.addVertex(2)
+g.addEdgeWeight(3,2,500);
+console.log(g)
+g.printGraph();
+```
+
+
+```javascript
+Graph {
+  adjacencyList: Map {
+    3 => [ { vertex: 2, weight: 500 } ],
+    2 => [ { vertex: 3, weight: 500 } ]
+  }
+}
+3 -> [object Object]
+2 -> [object Object]
 
 
 
 
+{
+  3: [{ vertex: 2, weight: 500 }],
+  2: [{ vertex: 3, weight: 500 }]
+}
 
+```
 
 
 
