@@ -1,3 +1,5 @@
+https://algocademy.com/blog/algorithms-for-detecting-cycles-in-graphs-a-comprehensive-guide/
+
 ```javascript
 class Graph {
     constructor(vertices) {
