@@ -29,3 +29,6 @@ Here's a comprehensive table outlining various types of graph-related questions,
 | **Graph Traversal with States**  | Flood Fill (Graph Traversal with States) | Perform a flood fill on a grid to change connected regions     | [733. Flood Fill](https://leetcode.com/problems/flood-fill/) |
 
 These categories and types encompass the majority of common graph-related questions and algorithms that frequently appear in interview questions and competitive programming challenges.
+
+
+Advance Graph Theory https://www.youtube.com/watch?v=6RcRSli0YEI&list=PL4usQ3qwKtHM0YUyGBBggQ68YbI2ANtzq&index=1
