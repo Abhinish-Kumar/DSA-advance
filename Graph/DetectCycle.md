@@ -76,3 +76,69 @@ if (g.hasCycle()) {
 }
 ```
 
+## Detect cycle in directed graph 
+
+```javascript
+let graph = {
+    0: [1],
+    1: [2],
+    2: [7, 3],
+    3: [4],
+    4: [6, 5],
+    5: [2],
+    6: [],
+    7: [8],
+    8: []
+};
+
+function detectCycle(graph, currentNode, visited, recursionStack) {
+    // Mark the current node as visited and add it to the recursion stack
+    visited[currentNode] = true;
+    recursionStack[currentNode] = true;
+
+    // Visit all the children of the current node
+    for (let i = 0; i < graph[currentNode].length; i++) {
+        let childNode = graph[currentNode][i];
+
+        // If the child node is not visited, recursively check for cycles
+        if (!visited[childNode]) {
+            if (detectCycle(graph, childNode, visited, recursionStack)) {
+                return true; // Cycle detected
+            }
+        } 
+        // If the child node is already in the recursion stack, a cycle is detected
+        else if (recursionStack[childNode]) {
+            return true; // Cycle detected
+        }
+    }
+
+    // Remove the current node from the recursion stack
+    recursionStack[currentNode] = false;
+    return false; // No cycle detected
+}
+
+function isCyclic(graph) {
+    let visited = {};
+    let recursionStack = {};
+
+    // Initialize visited and recursionStack
+    for (let node in graph) {
+        visited[node] = false;
+        recursionStack[node] = false;
+    }
+
+    // Check for cycles starting from each unvisited node
+    for (let node in graph) {
+        if (!visited[node]) {
+            if (detectCycle(graph, parseInt(node), visited, recursionStack)) {
+                return "Cycle detected";
+            }
+        }
+    }
+
+    return "No cycle detected";
+}
+
+console.log(isCyclic(graph)); // Output: "Cycle detected"
+```
+
